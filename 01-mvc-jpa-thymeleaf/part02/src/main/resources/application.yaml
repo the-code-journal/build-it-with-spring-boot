@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: spring-boot-projects-mvc-jpa-thymeleaf
+  datasource:
+    url: jdbc:h2:mem:student_db
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    show-sql: true
