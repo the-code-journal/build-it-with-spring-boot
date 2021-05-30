@@ -7,27 +7,27 @@ The complete video series is [available on Youtube Here][1].
 
 The application is built in 5 parts.
 
-- [**Part 1 - Intro**][12]
+- **Part 1 - Intro** - [Article][12] | [Video][13]
   - Introduction to Application
   - Create empty project with Spring Initializer
   - Import in STS, Add Undertow Web Server and Start Application
-- [**Part 2 - DB + JPA + Hibernate + Service**][12]
+- **Part 2 - DB + JPA + Hibernate + Service** - _Article(coming soon) | Video(coming soon)_
   - Add H2, JPA, Hibernate
   - Configure Spring Datasource properties
   - Add User and Student Entities
   - Create JPA repositories
   - Create Service Classes
   - Create JPA & Service Tests
-- [**Part 3 - Building the UI**][12]
+- **Part 3 - Building the UI** - _Article(coming soon) | Video(coming soon)_
   - Introduction to Thymeleaf
   - Create Student Controller to redirect to list page
   - Add Bootstrap 5
   - Add Google Font
   - Create List, Add, Edit, Delete pages
-- [**Part 4 - Spring MVC**][12]
+- **Part 4 - Spring MVC** - _Article(coming soon) | Video(coming soon)_
   - Completing the Student Controller - CRUD Operations
   - Passing Model to Thymeleaf
-- [**Part 5 - Spring Security**][12]
+- **Part 5 - Spring Security** - _Article(coming soon) | Video(coming soon)_
   - Add the Security - Login and Logout
   - Demo and close
 
@@ -46,7 +46,7 @@ The application is built in 5 parts.
 
 
 
-  [1]: https://www.youtube.com/channel/UClqfzuMz3J_c0iNG5QlGReg
+  [1]: https://www.youtube.com/watch?v=SSqIvBrNMkY&list=PLFZica6Hmcri2RPIt1al5cVfpEhxmaNIv
   [2]: https://undertow.io
   [3]: https://h2database.com/html/main.html
   [4]: https://www.thymeleaf.org
@@ -55,6 +55,7 @@ The application is built in 5 parts.
   [7]: https://spring.io/projects/spring-boot
   [8]: https://spring.io/projects/spring-framework
   [9]: https://spring.io/projects/spring-security
- [10]: https://www.oracle.com/java/technologies/persistence-jsp.html
- [11]: https://hibernate.org/orm/
- [12]: https://thecodejournal.tech/
+  [10]: https://www.oracle.com/java/technologies/persistence-jsp.html
+  [11]: https://hibernate.org/orm/
+  [12]: https://www.thecodejournal.tech/2021/05/build-it-with-spring-boot-crud-operations-part-1/
+  [13]: https://youtu.be/SSqIvBrNMkY
