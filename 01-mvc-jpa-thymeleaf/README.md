@@ -55,6 +55,6 @@ The application is built in 5 parts.
   [7]: https://spring.io/projects/spring-boot
   [8]: https://spring.io/projects/spring-framework
   [9]: https://spring.io/projects/spring-security
- [10]: https://www.oracle.com/java/technologies/persistence-jsp.html
- [11]: https://hibernate.org/orm/
- [12]: https://thecodejournal.tech/
+  [10]: https://www.oracle.com/java/technologies/persistence-jsp.html
+  [11]: https://hibernate.org/orm/
+  [12]: https://thecodejournal.tech/
