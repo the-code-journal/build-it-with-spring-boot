@@ -23,7 +23,7 @@ public class StudentRepositoryTest {
     private StudentRepository repository;
 
     @Test
-    public void save_StoresRecord_WhenRecordIsvalid() {
+    public void save_StoresRecord_WhenRecordIsValid() {
 
         final Student expected = new Student();
         expected.setFirstName(randomUUID().toString());

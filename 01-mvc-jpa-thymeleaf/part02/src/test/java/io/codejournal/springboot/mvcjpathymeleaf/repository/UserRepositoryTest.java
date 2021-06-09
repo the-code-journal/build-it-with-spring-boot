@@ -14,7 +14,7 @@ import io.codejournal.springboot.mvcjpathymeleaf.entity.User;
 
 @ExtendWith(SpringExtension.class)
 @DataJpaTest
-class UserRepositoryTest {
+public class UserRepositoryTest {
 
     @Autowired
     private TestEntityManager entityManager;
@@ -23,7 +23,7 @@ class UserRepositoryTest {
     private UserRepository repository;
 
     @Test
-    public void save_StoresRecord_WhenRecordIsvalid() {
+    public void save_StoresRecord_WhenRecordIsValid() {
 
         final User expected = new User();
         expected.setUsername(randomUUID().toString());
@@ -35,5 +35,4 @@ class UserRepositoryTest {
 
         assertThat(actual).isEqualTo(expected);
     }
-
 }
