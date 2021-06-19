@@ -18,7 +18,7 @@ The application is built in 5 parts.
   - Create JPA repositories
   - Create Service Classes
   - Create JPA & Service Tests
-- **Part 3 - Building the UI** - [Article][14] | _Video(coming soon)_
+- **Part 3 - Building the UI** - [Article][14] | [Video][19]
   - Introduction to Thymeleaf
   - Create Student Controller to redirect to list page
   - Add Bootstrap 5
@@ -64,3 +64,5 @@ The application is built in 5 parts.
   [16]: https://www.thecodejournal.tech/2021/06/build-it-with-spring-boot-crud-operations-part-5/
   [17]: https://youtu.be/SSqIvBrNMkY
   [18]: https://youtu.be/PeSei1DvRss
+  [19]: https://youtu.be/ZIZ4AVkVL0g
+
