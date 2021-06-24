@@ -24,7 +24,7 @@ The application is built in 5 parts.
   - Add Bootstrap 5
   - Add Google Font
   - Create List, Add, Edit, Delete pages
-- **Part 4 - Spring MVC** - [Article][15] | _Video(coming soon)_
+- **Part 4 - Spring MVC** - [Article][15] | [Video][20]
   - Completing the Student Controller - CRUD Operations
   - Passing Model to Thymeleaf
 - **Part 5 - Spring Security** - [Article][16] | _Video(coming soon)_
@@ -65,4 +65,4 @@ The application is built in 5 parts.
   [17]: https://youtu.be/SSqIvBrNMkY
   [18]: https://youtu.be/PeSei1DvRss
   [19]: https://youtu.be/ZIZ4AVkVL0g
-
+  [20]: https://youtu.be/-8T6Cd98IH0
