@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Student List</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="http://localhost:35729/livereload.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+
+        body {
+            font-family: 'Rubik', sans-serif;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav th:replace="students/header :: header"></nav>
+
+    <br />
+    <br />
+
+    <div class="container-sm">
+    <table class="table table-bordered table-striped table-hover">
+        <thead>
+            <tr>
+                <th style="width: 10%; text-align: center">#</th>
+                <th style="width: 30%;">First Name</th>
+                <th style="width: 30%">Last Name</th>
+                <th style="width: 30%;">&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="student,iteration : ${students}">
+                <td style="text-align:center" th:text="${(current * size) + iteration.count}">1</td>
+                <td th:text="${student.firstName}">John</td>
+                <td th:text="${student.lastName}">Doe</td>
+                <td>
+                    <a href="#" class="btn btn-info" th:href="'view?id=' + ${student.id}">View</a>
+                    <a href="#" class="btn btn-warning" th:href="'edit?id=' + ${student.id}">Edit</a>
+                    <a href="#" class="btn btn-danger" th:href="'delete?id=' + ${student.id}">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="add" class="btn btn-primary">Add new</a>
+            </div>
+            <div class="d-flex">
+                <nav aria-label="Page navigation example">
+                  <ul class="pagination">
+                    <li class="page-item disabled" th:if="${previous == -1}">
+                        <a class="page-link" href="#">Previous</a>
+                    </li>
+                    <li class="page-item" th:if="${previous != -1}">
+                        <a class="page-link" href="#"  th:href="'?page=' + ${previous}">Previous</a>
+                    </li>
+                    <li class="page-item" th:if="${next != -1}">
+                        <a class="page-link" href="#" th:href="'?page=' + ${next}">Next</a>
+                    </li>
+                    <li class="page-item disabled" th:if="${next == -1}">
+                        <a class="page-link" href="#" >Next</a>
+                    </li>
+                  </ul>
+                </nav>
+            </div>
+        </div>
+    </nav>
+    </div>
+</body>
+
+</html>

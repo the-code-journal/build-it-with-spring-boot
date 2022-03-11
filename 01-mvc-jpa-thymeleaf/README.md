@@ -27,7 +27,7 @@ The application is built in 5 parts.
 - **Part 4 - Spring MVC** - [Article][15] | [Video][20]
   - Completing the Student Controller - CRUD Operations
   - Passing Model to Thymeleaf
-- **Part 5 - Spring Security** - [Article][16] | _Video(coming soon)_
+- **Part 5 - Spring Security** - [Article][16] | [Video][21]
   - Add the Security - Login and Logout
   - Demo and close
 
@@ -66,3 +66,4 @@ The application is built in 5 parts.
   [18]: https://youtu.be/PeSei1DvRss
   [19]: https://youtu.be/ZIZ4AVkVL0g
   [20]: https://youtu.be/-8T6Cd98IH0
+  [21]: https://youtu.be/f7YKl6ATHQ8
