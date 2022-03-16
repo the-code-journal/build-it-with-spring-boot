@@ -74,4 +74,22 @@ public class UserServiceTest {
         then(repository).should().findByUsername(username);
         then(repository).shouldHaveNoMoreInteractions();
     }
+
+    @Test
+    public void save_ReturnSaved_WhenUserRecordIsCreated() {
+
+        final User expected = new User();
+
+        expected.setUsername(randomUUID().toString());
+        expected.setPassword(randomUUID().toString());
+
+        given(repository.save(expected)).willReturn(expected);
+
+        final User actual = fixture.save(expected);
+
+        assertThat(actual).isEqualTo(expected);
+
+        then(repository).should().save(expected);
+        then(repository).shouldHaveNoMoreInteractions();
+    }
 }
