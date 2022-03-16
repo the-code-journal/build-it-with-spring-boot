@@ -1,4 +1,5 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
@@ -27,24 +28,33 @@
 
     <div class="container-sm">
 
-        <h2 class="navbar-brand">Add Student</h2>
+        <h2 class="navbar-brand">Edit Student</h2>
 
-        <form th:action="@{save}" method="post" th:object="${student}">
+        <div th:if="${student.id == null}">
+            <div class="alert alert-danger" role="alert" th:text="'Student with Id[' + ${id} + '] not found'">
+                Student not found
+            </div>
+            <a href="list" class="btn btn-outline-secondary">Go Back</a>
+        </div>
+
+        <form th:action="@{save}" method="post" th:object="${student}" th:if="${student.id != null}">
+
+            <input type="hidden" id="id" name="id" th:value="*{id}" />
 
             <div class="mb-3">
                 <label for="firstName" class="form-label">First Name</label>
-                <input type="text" class="form-control" id="firstName" th:field="*{firstName}"
+                <input type="text" class="form-control" id="firstName" name="firstName" th:value="*{firstName}"
                     placeholder="First Name of the Student" />
             </div>
             <div class="mb-3">
                 <label for="lastName" class="form-label">Last Name</label>
-                <input type="text" class="form-control" id="lastName" th:field="*{lastName}"
+                <input type="text" class="form-control" id="lastName" name="lastName" th:value="*{lastName}"
                     placeholder="Last Name of the Student" />
             </div>
 
             <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
 
-            <input type="submit" class="btn btn-success" value="Add" />
+            <input type="submit" class="btn btn-success" value="Update" />
             <a href="list" class="btn btn-outline-secondary">Cancel</a>
         </form>
     </div>

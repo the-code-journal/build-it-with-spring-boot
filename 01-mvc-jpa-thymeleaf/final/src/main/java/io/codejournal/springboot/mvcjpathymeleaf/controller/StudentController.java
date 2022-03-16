@@ -19,7 +19,7 @@ import io.codejournal.springboot.mvcjpathymeleaf.service.StudentService;
 @Controller
 public class StudentController {
 
-    static final int DEFAULT_PAGE_SIZE = 2;
+    static final int PAGE_SIZE = 2;
 
     private final StudentService service;
 
@@ -29,25 +29,27 @@ public class StudentController {
     }
 
     @GetMapping("/students/")
-    public String index() {
+    public String index(final Model model) {
         return "redirect:list";
     }
 
     @GetMapping("/students/list")
-    public String list(final Model model, @RequestParam(value = "page", defaultValue = "0") final int pageNumber,
-            @RequestParam(value = "size", defaultValue = DEFAULT_PAGE_SIZE + "") final int pageSize) {
+    public String list(final Model model,
+            @RequestParam(name = "page", required = false, defaultValue = "0") final int pageNumber,
+            @RequestParam(name = "size", required = false, defaultValue = PAGE_SIZE + "") final int pageSize) {
 
         final Page<Student> page = service.getStudents(pageNumber, pageSize);
 
-        final int currentPageNumber = page.getNumber();
-        final int previousPageNumber = page.hasPrevious() ? currentPageNumber - 1 : -1;
-        final int nextPageNumber = page.hasNext() ? currentPageNumber + 1 : -1;
+        final int currentPage = page.getNumber();
+        final int previous = page.hasPrevious() ? currentPage - 1 : -1;
+        final int next = page.hasNext() ? currentPage + 1 : -1;
+
+        model.addAttribute("previous", previous);
+        model.addAttribute("next", next);
+        model.addAttribute("current", currentPage);
+        model.addAttribute("size", pageSize);
 
         model.addAttribute("students", page.getContent());
-        model.addAttribute("previousPageNumber", previousPageNumber);
-        model.addAttribute("nextPageNumber", nextPageNumber);
-        model.addAttribute("currentPageNumber", currentPageNumber);
-        model.addAttribute("pageSize", pageSize);
 
         return "students/list";
     }
@@ -55,9 +57,9 @@ public class StudentController {
     @GetMapping("/students/view")
     public String view(final Model model, @RequestParam final UUID id) {
 
-        final Optional<Student> record = service.getStudent(id);
+        final Optional<Student> student = service.getStudent(id);
 
-        model.addAttribute("student", record.isPresent() ? record.get() : new Student());
+        model.addAttribute("student", (student.isPresent()) ? student.get() : new Student());
         model.addAttribute("id", id);
 
         return "students/view";
@@ -74,16 +76,16 @@ public class StudentController {
     @GetMapping("/students/edit")
     public String edit(final Model model, @RequestParam final UUID id) {
 
-        final Optional<Student> record = service.getStudent(id);
+        final Optional<Student> student = service.getStudent(id);
 
-        model.addAttribute("student", record.isPresent() ? record.get() : new Student());
+        model.addAttribute("student", (student.isPresent()) ? student.get() : new Student());
         model.addAttribute("id", id);
 
         return "students/edit";
     }
 
     @PostMapping("/students/save")
-    public String save(final Model model, @ModelAttribute final Student student, final BindingResult errors) {
+    public String edit(@ModelAttribute final Student student, final BindingResult errors, final Model model) {
 
         service.save(student);
 
@@ -93,13 +95,14 @@ public class StudentController {
     @GetMapping("/students/delete")
     public String delete(final Model model, @RequestParam final UUID id) {
 
-        final Optional<Student> record = service.getStudent(id);
+        final Optional<Student> student = service.getStudent(id);
 
-        model.addAttribute("student", record.isPresent() ? record.get() : new Student());
+        model.addAttribute("student", (student.isPresent()) ? student.get() : new Student());
         model.addAttribute("id", id);
 
         return "students/delete";
     }
+
     @PostMapping("/students/delete")
     public String deletion(final Model model, @RequestParam final UUID id) {
 

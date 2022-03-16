@@ -1,4 +1,5 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
@@ -33,12 +34,12 @@
 
             <div class="mb-3">
                 <label for="firstName" class="form-label">First Name</label>
-                <input type="text" class="form-control" id="firstName" th:field="*{firstName}"
+                <input type="text" class="form-control" id="firstName" name="firstName" th:value="*{firstName}"
                     placeholder="First Name of the Student" />
             </div>
             <div class="mb-3">
                 <label for="lastName" class="form-label">Last Name</label>
-                <input type="text" class="form-control" id="lastName" th:field="*{lastName}"
+                <input type="text" class="form-control" id="lastName" name="lastName" th:value="*{lastName}"
                     placeholder="Last Name of the Student" />
             </div>
 
