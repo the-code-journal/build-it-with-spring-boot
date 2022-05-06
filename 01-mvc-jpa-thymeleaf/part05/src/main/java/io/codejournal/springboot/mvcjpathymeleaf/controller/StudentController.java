@@ -100,6 +100,7 @@ public class StudentController {
 
         return "students/delete";
     }
+
     @PostMapping("/students/delete")
     public String deletion(final Model model, @RequestParam final UUID id) {
 
